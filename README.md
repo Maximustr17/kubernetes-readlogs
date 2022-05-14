@@ -23,5 +23,4 @@ Prerequisites:
 Script:
 	The first step was to look for how to interact with kubernetes from python, I found there is a clint: https://github.com/kubernetes-client/python
 	Then I started reading the documentation about the client, I found that the way to get the logs of the PODs is, using the method: read_namespaced_pod_log, but the name of the PODs are made on the fly, so I had to look how to get the name of the pods, I founf getting it from the call: list_namespaced_pod, and then checking the body to get the name of the pods, and from there I was able to use the method read_namespaced_pod_log.	
-	
 	After doing doing the script I noticed that the image used wasn't creating logs, so I looked for a simple example of an image of nginx that creates simple logs to read: https://hub.docker.com/r/kscarlett/nginx-log-generator/tags
